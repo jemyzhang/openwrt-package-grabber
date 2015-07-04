@@ -34,6 +34,7 @@ def save_packages(url, location):
             save_packages(url + item, location + item)
         else:
             cnt += 1
+            item = item.replace('%2b', '+')
             print 'downloading item %d: ' % (cnt) + item
             if os.path.isfile(location + item):
                 print 'file exists, ignored.'
